@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
 function iteratorToStream(iterator) {
   return new ReadableStream({
     async pull(controller) {
@@ -23,19 +27,12 @@ async function* makeIterator(response) {
 
 export async function POST(req) {
   const body = await req.json()
-  const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-  });
 
   const response = await openai.chat.completions.create(
     {
       model: "gpt-3.5-turbo",
       stream: true,
       messages: [
-        {
-          role: "system",
-          content: "Write a sentence or two",
-        },
         {
           role: "user",
           content: body.prompt,
@@ -46,5 +43,5 @@ export async function POST(req) {
   );
   const iterator = makeIterator(response)
   const stream = iteratorToStream(iterator)
-  return new Response(stream)
+  return new NextResponse(stream)
 }
