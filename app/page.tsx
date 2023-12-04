@@ -27,6 +27,8 @@ export default function Home() {
     const textDecoder = new TextDecoder();
     setReadStream(reader)
     setStreaming(true)
+    console.log(reader)
+    console.log("This is an experiment")
     setPrompt("");
     setResponse("");
     let textRes = ""
