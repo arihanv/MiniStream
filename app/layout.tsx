@@ -4,10 +4,6 @@ import { ThemeProvider } from "./theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Ministream",
-};
-
 export default function RootLayout({
   children,
 }: {
