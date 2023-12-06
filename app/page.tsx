@@ -12,7 +12,6 @@ export default function Home() {
   const [readStream, setReadStream] = useState<ReadableStreamDefaultReader>();
 
   const generateResponse = async (prompt: string) => {
-    console.log("prompt:", prompt);
     const response = await fetch("/api/generate", {
       method: "POST",
       headers: {
@@ -28,6 +27,8 @@ export default function Home() {
     const textDecoder = new TextDecoder();
     setReadStream(reader)
     setStreaming(true)
+    console.log(reader)
+    console.log("This is an experiment")
     setPrompt("");
     setResponse("");
     let textRes = ""
