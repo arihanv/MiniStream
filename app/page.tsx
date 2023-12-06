@@ -24,6 +24,7 @@ export default function Home() {
       console.error("response is null")
       return
     }
+    console.log(response.body)
     const reader = response.body.getReader();
     const textDecoder = new TextDecoder();
     setReadStream(reader)
