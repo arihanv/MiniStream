@@ -11,6 +11,8 @@ export default function Home() {
   const [streaming, setStreaming] = useState(false);
   const [readStream, setReadStream] = useState<ReadableStreamDefaultReader>();
 
+  console.log("Test")
+
   const generateResponse = async (prompt: string) => {
     console.log("prompt:", prompt);
     const response = await fetch("/api/generate", {
