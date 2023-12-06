@@ -20,6 +20,9 @@ export default function RootLayout({
         <ThemeProvider forcedTheme="dark" attribute="class">
           {children}
         </ThemeProvider>
+        <div>
+          Hello this is a test
+        </div>
       </body>
     </html>
   );
