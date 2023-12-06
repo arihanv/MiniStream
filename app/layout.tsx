@@ -16,11 +16,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <ThemeProvider forcedTheme="dark" attribute="class">
-          {children}
-        </ThemeProvider>
-      </body>
     </html>
   );
 }
