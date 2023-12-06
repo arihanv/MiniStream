@@ -6,10 +6,6 @@ import { Input } from "@/components/ui/input";
 export default function Home() {
   const [botResponse, setResponse] = useState("");
   const [prompt, setPrompt] = useState("");
-  const [messages, setMessages] = useState<any>([]);
-  const streamRef = useRef(true);
-  const [streaming, setStreaming] = useState(false);
-  const [readStream, setReadStream] = useState<ReadableStreamDefaultReader>();
 
   const generateResponse = async (prompt: string) => {
     console.log("prompt:", prompt);
@@ -47,7 +43,6 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-24 gap-5">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
         <Button disabled={!streaming} onClick={() => readStream?.cancel()}>Stop Stream</Button>
       </div>
