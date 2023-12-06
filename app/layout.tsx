@@ -7,7 +7,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ministream",
-  description: "This is a demo app",
 };
 
 export default function RootLayout({
