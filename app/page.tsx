@@ -39,14 +39,10 @@ export default function Home() {
       setResponse((prevResponse) => textRes);
     }
 ;
-    setStreaming(false)
   };
 
   return (
     <main className="flex min-h-screen flex-col items-center p-24 gap-5">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <Button disabled={!streaming} onClick={() => readStream?.cancel()}>Stop Stream</Button>
-      </div>
       <div className="w-full justify-start max-w-5xl">
         {messages.map((message: any, i: number) => {
           return (
