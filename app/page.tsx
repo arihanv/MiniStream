@@ -26,10 +26,6 @@ export default function Home() {
     }
     const reader = response.body.getReader();
     const textDecoder = new TextDecoder();
-    setReadStream(reader)
-    setStreaming(true)
-    setPrompt("");
-    setResponse("");
     let textRes = ""
     while (streamRef.current) {
       const { done, value } = await reader.read();
